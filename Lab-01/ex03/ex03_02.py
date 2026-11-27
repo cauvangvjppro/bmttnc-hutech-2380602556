@@ -1,6 +1,10 @@
-nhap = input("Nhap danh sach cac phan tu, cach nhau boi dau phay: ")
-danh_sach = [phan_tu.strip() for phan_tu in nhap.split(",")]
+def dao_nguoc_list(lst):
+    return lst[::-1]
 
-danh_sach_dao_nguoc = danh_sach[::-1]
+# Nhập danh sách từ người dùng và xử lý chuỗi
+input_list = input("Nhập danh sách các số, cách nhau bằng dấu phẩy: ")
+numbers = list(map(int, input_list.split(',')))
 
-print("Danh sach sau khi dao nguoc:", danh_sach_dao_nguoc)
+# Sử dụng hàm và in kết quả
+list_dao_nguoc = dao_nguoc_list(numbers)
+print("List sau khi đảo ngược:", list_dao_nguoc)

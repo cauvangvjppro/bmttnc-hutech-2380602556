@@ -1,14 +1,15 @@
-nhap = input("Nhap cac cap key:value cho Dictionary, cach nhau boi dau phay (vi du: a:1,b:2): ")
-dictionary = {}
-for cap in nhap.split(","):
-    key, value = cap.strip().split(":")
-    dictionary[key.strip()] = value.strip()
+def xoa_phan_tu(dictionary, key):
+    if key in dictionary:
+        del dictionary[key]
+        return True
+    else:
+        return False
 
-print("Dictionary ban dau:", dictionary)
-
-key_xoa = input("Nhap key can xoa: ")
-if key_xoa in dictionary:
-    del dictionary[key_xoa]
-    print("Dictionary sau khi xoa:", dictionary)
+# Sử dụng hàm và in kết quả
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+key_to_delete = 'b'
+result = xoa_phan_tu(my_dict, key_to_delete)
+if result:
+    print("Phần tử đã được xóa từ Dictionary:", my_dict)
 else:
-    print("Khong tim thay key trong Dictionary.")
+    print("Không tìm thấy phần tử cần xóa trong Dictionary.")

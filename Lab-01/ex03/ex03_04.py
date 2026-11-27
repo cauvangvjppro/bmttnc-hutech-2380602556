@@ -1,8 +1,12 @@
-nhap = input("Nhap cac phan tu cua Tuple, cach nhau boi dau phay: ")
-tuple_du_lieu = tuple(phan_tu.strip() for phan_tu in nhap.split(","))
+def truy_cap_phan_tu(tuple_data):
+    first_element = tuple_data[0]
+    last_element = tuple_data[-1]
+    return first_element, last_element
 
-if len(tuple_du_lieu) == 0:
-    print("Tuple rong.")
-else:
-    print("Phan tu dau tien:", tuple_du_lieu[0])
-    print("Phan tu cuoi cung:", tuple_du_lieu[-1])
+# Nhập tuple từ người dùng
+input_tuple = eval(input("Nhập tuple, ví dụ (1, 2, 3): "))
+first, last = truy_cap_phan_tu(input_tuple)
+
+# In kết quả
+print("Phần tử đầu tiên:", first)
+print("Phần tử cuối cùng:", last)

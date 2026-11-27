@@ -1,6 +1,10 @@
-nhap = input("Nhap danh sach cac phan tu, cach nhau boi dau phay: ")
-danh_sach = [phan_tu.strip() for phan_tu in nhap.split(",")]
+def tao_tuple_tu_list(lst):
+    return tuple(lst)
 
-tuple_tu_danh_sach = tuple(danh_sach)
+# Nhập danh sách từ người dùng và xử lý chuỗi
+input_list = input("Nhập danh sách các số, cách nhau bằng dấu phẩy: ")
+numbers = list(map(int, input_list.split(',')))
 
-print("Tuple:", tuple_tu_danh_sach)
+my_tuple = tao_tuple_tu_list(numbers)
+print("List: ", numbers)
+print("Tuple từ List:", my_tuple)

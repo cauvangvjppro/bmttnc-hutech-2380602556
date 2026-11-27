@@ -1,9 +1,14 @@
-nhap = input("Nhap danh sach cac so, cach nhau boi dau phay: ")
-danh_sach = [int(so.strip()) for so in nhap.split(",")]
+def tinh_tong_so_chan(lst):
+    tong = 0
+    for num in lst:
+        if num % 2 == 0:
+            tong += num
+    return tong
 
-tong_chan = 0
-for so in danh_sach:
-    if so % 2 == 0:
-        tong_chan += so
+# Nhập danh sách từ người dùng và xử lý chuỗi
+input_list = input("Nhập danh sách các số, cách nhau bằng dấu phẩy: ")
+numbers = list(map(int, input_list.split(',')))
 
-print("Tong cac so chan trong danh sach la:", tong_chan)
+# Sử dụng hàm và in kết quả
+tong_chan = tinh_tong_so_chan(numbers)
+print("Tổng các số chẵn trong List là:", tong_chan)
